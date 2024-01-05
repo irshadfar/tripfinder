@@ -1,3 +1,5 @@
-.form-inline {
-  align-items: end;
+.right {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
 }
