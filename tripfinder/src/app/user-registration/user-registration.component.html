@@ -1,4 +1,4 @@
-<form class="container">
+<form class="container" #signInForm="ngForm">
     <div class="form-group">
         <label for="exampleInputEmail1">Name</label>
         <input class="form-control" name="name" [(ngModel)]="user.name" aria-describedby="emailHelp">
@@ -12,7 +12,10 @@
       <label for="exampleInputPassword1">Password</label>
       <input class="form-control" name="password" [(ngModel)]="user.password">
     </div>
-    <div class="button">
-        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    <div class="registrationError" *ngIf="registrationError">
+        Registration failed. Please try again.
     </div>  
+    <div class="button">
+        <button type="submit" class="btn btn-primary" [disabled]="signInForm.form.invalid" (click)="onSubmit()">Submit</button>
+    </div>
   </form>

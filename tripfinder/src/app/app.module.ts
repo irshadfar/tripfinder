@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SiteHeaderComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
