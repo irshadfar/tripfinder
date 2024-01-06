@@ -8,7 +8,8 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { TripsComponent } from './trips/trips.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginComponent } from './login/login.component'
     SiteHeaderComponent,
     UserRegistrationComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    TripsComponent
   ],
   imports: [
     BrowserModule,
