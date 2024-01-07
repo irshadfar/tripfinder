@@ -16,7 +16,7 @@ export class TripsComponent {
   tripId: tripID = {  userID: 0, tripID: 0}
   date: Date = new Date;
   showWeather: boolean = false
-
+  
 
   constructor(private userService: UserService, 
     private router: Router){}

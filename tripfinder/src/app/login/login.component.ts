@@ -19,7 +19,14 @@ export class LoginComponent {
   }
   onSubmit(){
     this.userService.loginUser(this.credential).subscribe({
-      next: () => this.router.navigate(['/home']),
+      next: (data) => {
+        if (data.login == "success"){
+          this.router.navigate(['/home'])
+        } else {
+          this.loginError = true;
+        }
+      
+      },
       error: () => (this.loginError = true)
     })
   }

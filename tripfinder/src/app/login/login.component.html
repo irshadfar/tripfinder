@@ -5,7 +5,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input class="form-control" name="password" [(ngModel)]="credential.password">
+        <input class="form-control" name="password" type="password" [(ngModel)]="credential.password">
       </div>
       <div class="loginError" *ngIf="loginError">
         Login failed. Please try again.
