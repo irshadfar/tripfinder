@@ -3,6 +3,8 @@ import { TripData, Weather, tripID } from '../models/user.models';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-trips',
   templateUrl: './trips.component.html',
@@ -10,8 +12,10 @@ import { Router } from '@angular/router';
 })
 export class TripsComponent {
   tripdata: TripData = {userId: 0, tripId: 0, location: '', dateTime: ''};
-  weather: Weather = {userId: 0, tripId: 0, location: '', dateTime: '', weather:['']};
-  tripId: tripID = {  userID: '', tripID: ''}
+  weather: Weather = {userId: 0, tripId: 0, location: '', dateTime: '', weather: ''};
+  tripId: tripID = {  userID: 0, tripID: 0}
+  date: Date = new Date;
+  showWeather: boolean = false
 
 
   constructor(private userService: UserService, 
@@ -23,8 +27,14 @@ export class TripsComponent {
     })
   }
   onSubmit(){
-    this.userService.getTripData(this.weather).subscribe({
-      next: (data) => {this.weather}
+    this.tripdata.userId = this.tripId.userID;
+    this.tripdata.tripId = this.tripId.tripID;
+    this.userService.getTripData(this.tripdata).subscribe({
+      next: (data) => {
+        this.weather = data;
+        this.showWeather = true;
+      }
+      
     })
   }
 }

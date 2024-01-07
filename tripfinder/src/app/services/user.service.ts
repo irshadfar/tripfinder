@@ -22,9 +22,10 @@ export class UserService {
     .pipe()
   }
 
-  getTripData(weather: Weather): Observable<any>{
+  getTripData(tripdata: TripData): Observable<any>{
+    console.log(tripdata)
     return this.http
-    .post('http://localhost:8888/tripAdvisor/trip-data', weather)
+    .post('http://localhost:8888/tripAdvisor/trip-data', tripdata)
     .pipe()
   }
 

@@ -21,10 +21,10 @@ export interface Weather {
     tripId: number;
     location: string;
     dateTime: string;
-    weather: string[];
+    weather: any;
 }
 
 export interface tripID {
-    userID: string,
-    tripID: string
+    userID: number,
+    tripID: number
 }
